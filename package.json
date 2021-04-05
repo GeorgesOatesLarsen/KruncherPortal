@@ -4,7 +4,7 @@
   "description": "its a thing I guess, why are you reading this",
   "main": "hiddensource.js",
   "scripts": {
-    "dev": "babel hiddensource.js --out-file hiddensource_compiled.js"
+    "dev": "webpack"
   },
   "repository": {
     "type": "git",
@@ -19,11 +19,21 @@
   "babel": {
     "presets": [
       "@babel/preset-env"
+    ],
+    "plugins": [
+      ["@babel/transform-runtime"]
     ]
   },
   "devDependencies": {
     "@babel/cli": "^7.13.14",
     "@babel/core": "^7.13.14",
-    "@babel/preset-env": "^7.13.12"
+    "@babel/plugin-transform-runtime": "^7.13.10",
+    "@babel/preset-env": "^7.13.12",
+    "babel-loader": "^8.2.2",
+    "webpack": "^5.30.0",
+    "webpack-cli": "^4.6.0"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.13.10"
   }
 }
