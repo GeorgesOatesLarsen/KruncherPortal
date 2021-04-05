@@ -9,7 +9,8 @@ Hello! Establishing a "secure" (from reverse engineers, not in-network threats) 
   var encryptionKey = CryptoJS.PBKDF2(passphrase, salt, {
     keySize: 12,
     iterations: 500,
-  }).clamp();
+  });
+  encryptionKey.clamp();
   var key = CryptoJS.lib.WordArray.create(encryptionKey.words.slice(0, 8));
   var iv = CryptoJS.lib.WordArray.create(encryptionKey.words.slice(8));
   //This is useful, if you are me, and you want to encrypt a payload within the console. : - )
