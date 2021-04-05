@@ -10,8 +10,8 @@ Hello! Establishing a "secure" (from reverse engineers, not in-network threats) 
     keySize: 12,
     iterations: 500,
   }).clamp();
-  var key = CryptoJS.lib.WordArray.create(output.words.slice(0, 8));
-  var iv = CryptoJS.lib.WordArray.create(output.words.slice(8));
+  var key = CryptoJS.lib.WordArray.create(encryptionKey.words.slice(0, 8));
+  var iv = CryptoJS.lib.WordArray.create(encryptonKey.words.slice(8));
   //This is useful, if you are me, and you want to encrypt a payload within the console. : - )
   function encryptPayload(payload) {
     console.Log(CryptoJS.AES.encrypt(JSON.stringify(payload), key, {iv: iv}).toString());
