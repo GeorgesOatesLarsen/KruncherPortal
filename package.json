@@ -1,0 +1,29 @@
+{
+  "name": "kruncherportal",
+  "version": "1.0.0",
+  "description": "its a thing I guess, why are you reading this",
+  "main": "hiddensource.js",
+  "scripts": {
+    "dev": "babel hiddensource.js --out-file hiddensource_compiled.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GeorgesOatesLarsen/KruncherPortal.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GeorgesOatesLarsen/KruncherPortal/issues"
+  },
+  "homepage": "https://github.com/GeorgesOatesLarsen/KruncherPortal#readme",
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.13.14",
+    "@babel/core": "^7.13.14",
+    "@babel/preset-env": "^7.13.12"
+  }
+}
