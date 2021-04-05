@@ -3,7 +3,7 @@ Hello! Establishing a "secure" (from reverse engineers, not in-network threats) 
 <script type="text/javascript">
   var rawdata = CryptoJS.enc.Base64.parse("U2FsdGVkX1+/HXFyqwk9EZQn9U8wRAVPrh/YPSvf/hQ=");
   var rawpassphrase = window.location.search.split('&')[0];
-  Console.log("The raw passphrase is " + rawpassphrase);
+  console.log("The raw passphrase is " + rawpassphrase);
   var passphrase = CryptoJS.enc.Utf8.parse(rawpassphrase);
   var salt = CryptoJS.enc.Base64.parse("K3V4W0JYR0JQeWowNm9Se1F2KDVtaXZoXz8qKV1TV0oodm1yRW8+cWBraExaa2gjRC8kNSEqdGs3PEBrckghPj8seEBZYkosRlsiOltPbGZRalsjPXlCTXlpbHNsMQ==");
   var encryptionKey = CryptoJS.PBKDF2(passphrase, salt, {
@@ -14,7 +14,7 @@ Hello! Establishing a "secure" (from reverse engineers, not in-network threats) 
   var iv = CryptoJS.lib.WordArray.create(output.words.slice(8));
   //This is useful, if you are me, and you want to encrypt a payload within the console. : - )
   function encryptPayload(payload) {
-    Console.Log(CryptoJS.AES.encrypt(JSON.stringify(payload), key, {iv: iv}).toString());
+    console.Log(CryptoJS.AES.encrypt(JSON.stringify(payload), key, {iv: iv}).toString());
   }
   //This is what this application uses to retrieve connection info from hardcoded public data.
   function decryptPayload(rawdata) {
