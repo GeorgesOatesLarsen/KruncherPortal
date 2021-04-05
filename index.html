@@ -19,7 +19,7 @@ Hello! Establishing a "secure" (from reverse engineers, not in-network threats) 
   }
   //This is what this application uses to retrieve connection info from hardcoded public data.
   function decryptPayload(rawdata) {
-    let decdat = CryptoJS.AES.decrypt(CryptoJS.enc.Base64.parse(rawdata), key, {iv: iv});
+    let decdat = CryptoJS.AES.decrypt(CryptoJS.enc.Base64.parse(rawdata), key, {iv: iv}).toString();
     console.log(decdat);
     return JSON.parse(decdat);
   }
