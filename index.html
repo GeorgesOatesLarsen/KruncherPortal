@@ -15,7 +15,7 @@ Hello! Establishing a "secure" (from reverse engineers, not in-network threats) 
   var iv = CryptoJS.lib.WordArray.create(encryptionKey.words.slice(8));
   //This is useful, if you are me, and you want to encrypt a payload within the console. : - )
   function encryptPayload(payload) {
-    console.Log(CryptoJS.AES.encrypt(JSON.stringify(payload), key, {iv: iv}).toString());
+    return CryptoJS.AES.encrypt(JSON.stringify(payload), key, {iv: iv}).toString();
   }
   //This is what this application uses to retrieve connection info from hardcoded public data.
   function decryptPayload(rawdata) {
