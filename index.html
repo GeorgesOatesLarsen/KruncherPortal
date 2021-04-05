@@ -1,11 +1,11 @@
 Hello! Establishing a "secure" (from reverse engineers, not in-network threats) uplink to central command...
 <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
 <script type="text/javascript">
-  var rawdata = Crypto.enc.Base64.parse("U2FsdGVkX1+/HXFyqwk9EZQn9U8wRAVPrh/YPSvf/hQ=");
+  var rawdata = CryptoJS.enc.Base64.parse("U2FsdGVkX1+/HXFyqwk9EZQn9U8wRAVPrh/YPSvf/hQ=");
   var rawpassphrase = window.location.search.split('&')[0];
   Console.log("The raw passphrase is " + rawpassphrase);
   var passphrase = CryptoJS.enc.Utf8.parse(rawpassphrase);
-  var salt = Crypto.enc.Base64.parse("K3V4W0JYR0JQeWowNm9Se1F2KDVtaXZoXz8qKV1TV0oodm1yRW8+cWBraExaa2gjRC8kNSEqdGs3PEBrckghPj8seEBZYkosRlsiOltPbGZRalsjPXlCTXlpbHNsMQ==");
+  var salt = CryptoJS.enc.Base64.parse("K3V4W0JYR0JQeWowNm9Se1F2KDVtaXZoXz8qKV1TV0oodm1yRW8+cWBraExaa2gjRC8kNSEqdGs3PEBrckghPj8seEBZYkosRlsiOltPbGZRalsjPXlCTXlpbHNsMQ==");
   var encryptionKey = CryptoJS.PBKDF2(passphrase, salt, {
     keySize: 12,
     iterations: 500,
