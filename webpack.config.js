@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
     entry: [path.resolve(__dirname, 'hiddensource.js')],
-    mode:"development",
+    mode:"production",
     module: {
         rules: [
             {
@@ -18,5 +18,9 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, './'),
         filename: 'hiddensource_compiled.js',
+        library: {
+            name: 'Kruncher',
+            type: 'var'
+        }
     },
 };

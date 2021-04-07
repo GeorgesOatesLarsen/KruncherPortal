@@ -1,0 +1,39 @@
+* {
+    background-color: #000000;
+    color:#999999;
+    font-family:monospace,monospace;
+    font-size:1em;
+    white-space: pre-wrap;
+}
+html { height: 100%; overflow:auto; }
+body { height: 100%; margin-bottom:1em; }
+.termp {
+    position: fixed;
+    bottom: 0;
+}
+
+.terminator-hidden {
+    position: fixed;
+    opacity: 0;
+    height: 0;
+    left: -99999;
+    bottom: 0;
+    overflow: hidden
+}
+
+.terminator-blink {
+  animation: blink-animation .75s steps(4, start) infinite;
+  -webkit-animation: blink-animation .75s steps(4, start) infinite;
+}
+
+@keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+
+@-webkit-keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}

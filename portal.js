@@ -13,18 +13,17 @@ var salt = CryptoJS.enc.Base64.parse("K3V4W0JYR0JQeWowNm9Se1F2KDVtaXZoXz8qKV1TV0
 var encryptionKey = CryptoJS.PBKDF2(passphrase, salt, {
     keySize: 12,
     iterations: 500,
+    hasher: CryptoJS.algo.SHA256
 });
-encryptionKey.clamp();
+//encryptionKey.clamp();
 var key = CryptoJS.lib.WordArray.create(encryptionKey.words.slice(0, 8));
-var iv = CryptoJS.lib.WordArray.create(encryptionKey.words.slice(8));
+var iv = CryptoJS.lib.WordArray.create(encryptionKey.words.slice(8, 12));
 
 //This is useful, if you are me, and you want to encrypt a payload within the console. : - )
 function encryptPayload(payload) {
-    return CryptoJS.AES.encrypt(CryptoJS.enc.Utf8.parse(JSON.stringify(payload)), key, {iv: iv}).toString();
+    return CryptoJS.AES.encrypt(CryptoJS.enc.Utf8.parse(payload), key, {iv: iv}).toString();
 }
 //This is what this application uses to retrieve connection info from hardcoded public data.
 function decryptPayload(rawdata) {
-    return JSON.parse(CryptoJS.AES.decrypt(rawdata, key, {iv: iv}).toString(CryptoJS.enc.Utf8));
+    return CryptoJS.AES.decrypt(rawdata, key, {iv: iv}).toString(CryptoJS.enc.Utf8);
 }
-
-

@@ -21,12 +21,19 @@
       "@babel/preset-env"
     ],
     "plugins": [
-      ["@babel/transform-runtime"]
+      "@babel/transform-runtime",
+      [
+        "@babel/plugin-proposal-class-properties",
+        {
+          "loose": true
+        }
+      ]
     ]
   },
   "devDependencies": {
     "@babel/cli": "^7.13.14",
     "@babel/core": "^7.13.14",
+    "@babel/plugin-proposal-class-properties": "^7.13.0",
     "@babel/plugin-transform-runtime": "^7.13.10",
     "@babel/preset-env": "^7.13.12",
     "babel-loader": "^8.2.2",
